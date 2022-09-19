@@ -12,6 +12,7 @@ class DonationCreate(BaseModel):
 class DonationDB(DonationCreate):
     id: int
     create_date: Optional[datetime]
+    user_id: Optional[int]
 
     class Config:
         orm_mode = True

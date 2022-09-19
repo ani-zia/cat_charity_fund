@@ -5,7 +5,7 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.crud.charityproject import charityproject_crud
-from app.models.charityproject import CharityProject
+from app.models import CharityProject
 
 
 async def check_name_duplicate(
@@ -15,8 +15,8 @@ async def check_name_duplicate(
     project_id = await charityproject_crud.get_id_by_name(project_name, session)
     if project_id:
         raise HTTPException(
-            status_code=HTTPStatus.UNPROCESSABLE_ENTITY,
-            detail='Такое название есть'
+            status_code=HTTPStatus.BAD_REQUEST,
+            detail='Проект с таким именем уже существует!'
         )
 
 
@@ -37,15 +37,12 @@ async def check_charity_project_exists(
 
 
 async def check_charity_project_active(
-    charity_project_id: int,
+    charity_project: CharityProject,
     session: AsyncSession,
 ) -> CharityProject:
-    charity_project = await check_charity_project_exists(
-        charity_project_id, session
-    )
     if charity_project.fully_invested:
         raise HTTPException(
-            status_code=HTTPStatus.UNPROCESSABLE_ENTITY,
+            status_code=HTTPStatus.BAD_REQUEST,
             detail='Закрытый проект нельзя редактировать!'
         )
     return charity_project

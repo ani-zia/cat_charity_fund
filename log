@@ -1,0 +1,1868 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.6, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /Users/annasimanovaa/Dev/cat_charity_fund/venv/bin/python3
+rootdir: /Users/annasimanovaa/Dev/cat_charity_fund, configfile: pytest.ini, testpaths: tests/
+plugins: Faker-12.0.1, anyio-3.6.1, asyncio-0.18.3, freezegun-0.4.2, pythonpath-0.7.4
+asyncio: mode=auto
+collecting ... collected 78 items
+
+tests/test_auth.py::test_register PASSED                                 [  1%]
+tests/test_auth.py::test_register_invalid_pass PASSED                    [  2%]
+tests/test_charity_project.py::test_create_invalid_project_name[] PASSED [  3%]
+tests/test_charity_project.py::test_create_invalid_project_name[lovechimichangasbutnunchakuisbetternunchakis4lifelovechimichangasbutnunchakuisbetternunchakis4lifelovechimichangasbutnunchakuisbetternunchakis4life] PASSED [  5%]
+tests/test_charity_project.py::test_create_invalid_project_name[None] PASSED [  6%]
+tests/test_charity_project.py::test_create_project_no_desc[] PASSED      [  7%]
+tests/test_charity_project.py::test_create_project_no_desc[None] PASSED  [  8%]
+tests/test_charity_project.py::test_create_project_with_autofilling_fields[json0] PASSED [ 10%]
+tests/test_charity_project.py::test_create_project_with_autofilling_fields[json1] PASSED [ 11%]
+tests/test_charity_project.py::test_create_project_with_autofilling_fields[json2] PASSED [ 12%]
+tests/test_charity_project.py::test_create_invalid_full_amount_value[-100] PASSED [ 14%]
+tests/test_charity_project.py::test_create_invalid_full_amount_value[0.5] PASSED [ 15%]
+tests/test_charity_project.py::test_create_invalid_full_amount_value[test] PASSED [ 16%]
+tests/test_charity_project.py::test_create_invalid_full_amount_value[0.0] PASSED [ 17%]
+tests/test_charity_project.py::test_create_invalid_full_amount_value[] PASSED [ 19%]
+tests/test_charity_project.py::test_create_invalid_full_amount_value[None] PASSED [ 20%]
+tests/test_charity_project.py::test_get_charity_project FAILED           [ 21%]
+tests/test_charity_project.py::test_get_all_charity_project FAILED       [ 23%]
+tests/test_charity_project.py::test_create_charity_project FAILED        [ 24%]
+tests/test_charity_project.py::test_create_charity_project_validation_error[json0] PASSED [ 25%]
+tests/test_charity_project.py::test_create_charity_project_validation_error[json1] PASSED [ 26%]
+tests/test_charity_project.py::test_create_charity_project_validation_error[json2] PASSED [ 28%]
+tests/test_charity_project.py::test_create_charity_project_validation_error[json3] PASSED [ 29%]
+tests/test_charity_project.py::test_create_charity_project_validation_error[json4] PASSED [ 30%]
+tests/test_charity_project.py::test_create_charity_project_validation_error[json5] PASSED [ 32%]
+tests/test_charity_project.py::test_delete_project_usual_user PASSED     [ 33%]
+tests/test_charity_project.py::test_delete_charity_project FAILED        [ 34%]
+tests/test_charity_project.py::test_delete_charity_project_invalid_id PASSED [ 35%]
+tests/test_charity_project.py::test_update_charity_project[json0-expected_data0] FAILED [ 37%]
+tests/test_charity_project.py::test_update_charity_project[json1-expected_data1] FAILED [ 38%]
+tests/test_charity_project.py::test_update_charity_project[json2-expected_data2] FAILED [ 39%]
+tests/test_charity_project.py::test_update_charity_project_full_amount_equal_invested_amount[json0] FAILED [ 41%]
+tests/test_charity_project.py::test_update_charity_project_full_amount_equal_invested_amount[json1] FAILED [ 42%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json0] FAILED [ 43%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json1] PASSED [ 44%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json2] PASSED [ 46%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json3] FAILED [ 47%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json4] FAILED [ 48%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json5] FAILED [ 50%]
+tests/test_charity_project.py::test_update_charity_project_invalid[json6] FAILED [ 51%]
+tests/test_charity_project.py::test_update_charity_project_same_name PASSED [ 52%]
+tests/test_charity_project.py::test_update_charity_project_full_amount_smaller_already_invested[0] FAILED [ 53%]
+tests/test_charity_project.py::test_update_charity_project_full_amount_smaller_already_invested[5] FAILED [ 55%]
+tests/test_charity_project.py::test_create_charity_project_usual_user PASSED [ 56%]
+tests/test_charity_project.py::test_patch_charity_project_usual_user PASSED [ 57%]
+tests/test_charity_project.py::test_patch_charity_project_fully_invested PASSED [ 58%]
+tests/test_charity_project.py::test_create_charity_project_same_name PASSED [ 60%]
+tests/test_charity_project.py::test_create_charity_project_diff_time PASSED [ 61%]
+tests/test_charity_project.py::test_donation_exist_project_create PASSED [ 62%]
+tests/test_charity_project.py::test_delete_charity_project_already_invested PASSED [ 64%]
+tests/test_charity_project.py::test_delete_charity_project_already_closed FAILED [ 65%]
+tests/test_charity_project.py::test_get_all_charity_project_not_auth_user FAILED [ 66%]
+tests/test_db.py::test_fin_base_is_abstract PASSED                       [ 67%]
+tests/test_db.py::test_check_migration_file_exist PASSED                 [ 69%]
+tests/test_db.py::test_check_db_url PASSED                               [ 70%]
+tests/test_donations.py::test_create_donation[json0-keys0-expected_data0] PASSED [ 71%]
+tests/test_donations.py::test_create_donation[json1-keys1-expected_data1] PASSED [ 73%]
+tests/test_donations.py::test_create_donation_incorrect[json0] PASSED    [ 74%]
+tests/test_donations.py::test_create_donation_incorrect[json1] PASSED    [ 75%]
+tests/test_donations.py::test_create_donation_incorrect[json2] PASSED    [ 76%]
+tests/test_donations.py::test_create_donation_incorrect[json3] PASSED    [ 78%]
+tests/test_donations.py::test_create_donation_incorrect[json4] PASSED    [ 79%]
+tests/test_donations.py::test_create_donation_incorrect[json5] PASSED    [ 80%]
+tests/test_donations.py::test_create_donation_incorrect[json6] PASSED    [ 82%]
+tests/test_donations.py::test_get_user_donation PASSED                   [ 83%]
+tests/test_donations.py::test_get_all_donations PASSED                   [ 84%]
+tests/test_donations.py::test_donation_invalid[json0] PASSED             [ 85%]
+tests/test_donations.py::test_donation_invalid[json1] PASSED             [ 87%]
+tests/test_donations.py::test_donation_invalid[json2] PASSED             [ 88%]
+tests/test_donations.py::test_donation_invalid[json3] PASSED             [ 89%]
+tests/test_donations.py::test_donation_superuser_UD_enpoints PASSED      [ 91%]
+tests/test_donations.py::test_donation_auth_user_UD_enpoints PASSED      [ 92%]
+tests/test_donations.py::test_donation_user_UD_enpoints PASSED           [ 93%]
+tests/test_donations.py::test_create_donation_check_create_date PASSED   [ 94%]
+tests/test_investment.py::test_donation_exist_non_project PASSED         [ 96%]
+tests/test_investment.py::test_project_exist_non_donations FAILED        [ 97%]
+tests/test_investment.py::test_fully_invested_amount_for_two_projects FAILED [ 98%]
+tests/test_investment.py::test_donation_to_little_invest_project PASSED  [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_get_charity_project ___________________________
+
+user_client = <starlette.testclient.TestClient object at 0x111b9b0d0>
+charity_project = <app.models.charity_project.CharityProject object at 0x1110bfe50>
+
+    def test_get_charity_project(user_client, charity_project):
+>       response = user_client.get('/charity_project/')
+
+tests/test_charity_project.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:542: in get
+    return self.request('GET', url, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> 0 -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_________________________ test_get_all_charity_project _________________________
+
+user_client = <starlette.testclient.TestClient object at 0x1120aba30>
+charity_project = <app.models.charity_project.CharityProject object at 0x1120a90f0>
+charity_project_nunchaku = <app.models.charity_project.CharityProject object at 0x1120a9420>
+
+    def test_get_all_charity_project(
+        user_client, charity_project, charity_project_nunchaku
+    ):
+>       response = user_client.get("/charity_project/")
+
+tests/test_charity_project.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:542: in get
+    return self.request('GET', url, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 2 validation errors for CharityProjectDB
+E               response -> 0 -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+E               response -> 1 -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_________________________ test_create_charity_project __________________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111f8d1b0>
+
+    def test_create_charity_project(superuser_client):
+        response = superuser_client.post(
+            "/charity_project/",
+            json={
+                "name": "Мертвый Бассейн",
+                "description": "Deadpool inside",
+                "full_amount": 1000000,
+            },
+        )
+        assert (
+            response.status_code == 200
+        ), "При создании проекта должен возвращаться статус-код 200."
+        data = response.json()
+        keys = sorted(
+            [
+                "name",
+                "description",
+                "full_amount",
+                "create_date",
+                "fully_invested",
+                "id",
+                "invested_amount",
+            ]
+        )
+        assert (
+            sorted(list(data.keys())) == keys
+        ), f"При создании проекта в ответе API должны быть ключи `{keys}`."
+        data.pop("create_date")
+>       assert data == {
+            "description": "Deadpool inside",
+            "full_amount": 1000000,
+            "fully_invested": False,
+            "id": 1,
+            "invested_amount": 0,
+            "name": "Мертвый Бассейн",
+        }, "При создании проекта тело ответа API отличается от ожидаемого."
+E       AssertionError: При создании проекта тело ответа API отличается от ожидаемого.
+E       assert {'description': 'Deadpool inside',\n 'full_amount': -1000000,\n 'fully_invested': False,\n 'id': 1,\n 'invested_amount': 0,\n 'name': 'Мертвый Бассейн'} == {'description': 'Deadpool inside',\n 'full_amount': 1000000,\n 'fully_invested': False,\n 'id': 1,\n 'invested_amount': 0,\n 'name': 'Мертвый Бассейн'}
+E         Common items:
+E         {'description': 'Deadpool inside',
+E          'fully_invested': False,
+E          'id': 1,
+E          'invested_amount': 0,
+E          'name': 'Мертвый Бассейн'}
+E         Differing items:
+E         {'full_amount': -1000000} != {'full_amount': 1000000}
+E         Full diff:
+E           {
+E            'description': 'Deadpool inside',
+E         -  'full_amount': 1000000,
+E         +  'full_amount': -1000000,
+E         ?                 +
+E            'fully_invested': False,
+E            'id': 1,
+E            'invested_amount': 0,
+E            'name': 'Мертвый Бассейн',
+E           }
+
+tests/test_charity_project.py:207: AssertionError
+_________________________ test_delete_charity_project __________________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x1120417b0>
+charity_project = <app.models.charity_project.CharityProject object at 0x112040a00>
+
+    def test_delete_charity_project(superuser_client, charity_project):
+>       response = superuser_client.delete(f"/charity_project/{charity_project.id}")
+
+tests/test_charity_project.py:262: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:611: in delete
+    return self.request('DELETE', url, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+______________ test_update_charity_project[json0-expected_data0] _______________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111efe6b0>
+charity_project = <app.models.charity_project.CharityProject object at 0x112023130>
+json = {'full_amount': 10}
+expected_data = {'close_date': None, 'create_date': '2010-10-10T00:00:00', 'description': 'Huge fan of chimichangas. Wanna buy a lot', 'full_amount': 10, ...}
+
+    @pytest.mark.parametrize(
+        "json, expected_data",
+        [
+            (
+                {"full_amount": 10},
+                {
+                    "name": "chimichangas4life",
+                    "description": "Huge fan of chimichangas. Wanna buy a lot",
+                    "full_amount": 10,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+            (
+                {"name": "chimi"},
+                {
+                    "name": "chimi",
+                    "description": "Huge fan of chimichangas. Wanna buy a lot",
+                    "full_amount": 1000000,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+            (
+                {"description": "Give me the money!"},
+                {
+                    "name": "chimichangas4life",
+                    "description": "Give me the money!",
+                    "full_amount": 1000000,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+        ],
+    )
+    def test_update_charity_project(superuser_client, charity_project, json, expected_data):
+        response = superuser_client.patch("/charity_project/1", json=json)
+        assert (
+            response.status_code == 200
+        ), "При обновлении проекта должен возвращаться статус-код 200."
+        data = response.json()
+        keys = sorted(
+            [
+                "name",
+                "description",
+                "full_amount",
+                "id",
+                "invested_amount",
+                "fully_invested",
+                "create_date",
+                "close_date",
+            ]
+        )
+        assert (
+            sorted(list(data.keys())) == keys
+        ), f"При обновлении проекта в ответе API должны быть ключи `{keys}`."
+>       assert (
+            data == expected_data
+        ), "При обновлении проекта тело ответа API отличается от ожидаемого."
+E       AssertionError: При обновлении проекта тело ответа API отличается от ожидаемого.
+E       assert {'close_date': None,\n 'create_date': '2010-10-10T00:00:00',\n 'description': 'Huge fan of chimichangas. Wanna buy a lot',\n 'full_amount': -10,\n 'fully_invested': False,\n 'id': 1,\n 'invested_amount': 0,\n 'name': 'chimichangas4life'} == {'close_date': None,\n 'create_date': '2010-10-10T00:00:00',\n 'description': 'Huge fan of chimichangas. Wanna buy a lot',\n 'full_amount': 10,\n 'fully_invested': False,\n 'id': 1,\n 'invested_amount': 0,\n 'name': 'chimichangas4life'}
+E         Common items:
+E         {'close_date': None,
+E          'create_date': '2010-10-10T00:00:00',
+E          'description': 'Huge fan of chimichangas. Wanna buy a lot',
+E          'fully_invested': False,
+E          'id': 1,
+E          'invested_amount': 0,
+E          'name': 'chimichangas4life'}
+E         Differing items:
+E         {'full_amount': -10} != {'full_amount': 10}
+E         Full diff:
+E           {
+E            'close_date': None,
+E            'create_date': '2010-10-10T00:00:00',
+E            'description': 'Huge fan of chimichangas. Wanna buy a lot',
+E         -  'full_amount': 10,
+E         +  'full_amount': -10,
+E         ?                 +
+E            'fully_invested': False,
+E            'id': 1,
+E            'invested_amount': 0,
+E            'name': 'chimichangas4life',
+E           }
+
+tests/test_charity_project.py:370: AssertionError
+______________ test_update_charity_project[json1-expected_data1] _______________
+
+superuser_client = <starlette.testclient.TestClient object at 0x1120b5f00>
+charity_project = <app.models.charity_project.CharityProject object at 0x1120b49d0>
+json = {'name': 'chimi'}
+expected_data = {'close_date': None, 'create_date': '2010-10-10T00:00:00', 'description': 'Huge fan of chimichangas. Wanna buy a lot', 'full_amount': 1000000, ...}
+
+    @pytest.mark.parametrize(
+        "json, expected_data",
+        [
+            (
+                {"full_amount": 10},
+                {
+                    "name": "chimichangas4life",
+                    "description": "Huge fan of chimichangas. Wanna buy a lot",
+                    "full_amount": 10,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+            (
+                {"name": "chimi"},
+                {
+                    "name": "chimi",
+                    "description": "Huge fan of chimichangas. Wanna buy a lot",
+                    "full_amount": 1000000,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+            (
+                {"description": "Give me the money!"},
+                {
+                    "name": "chimichangas4life",
+                    "description": "Give me the money!",
+                    "full_amount": 1000000,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+        ],
+    )
+    def test_update_charity_project(superuser_client, charity_project, json, expected_data):
+>       response = superuser_client.patch("/charity_project/1", json=json)
+
+tests/test_charity_project.py:350: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+______________ test_update_charity_project[json2-expected_data2] _______________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111e927d0>
+charity_project = <app.models.charity_project.CharityProject object at 0x111e917b0>
+json = {'description': 'Give me the money!'}
+expected_data = {'close_date': None, 'create_date': '2010-10-10T00:00:00', 'description': 'Give me the money!', 'full_amount': 1000000, ...}
+
+    @pytest.mark.parametrize(
+        "json, expected_data",
+        [
+            (
+                {"full_amount": 10},
+                {
+                    "name": "chimichangas4life",
+                    "description": "Huge fan of chimichangas. Wanna buy a lot",
+                    "full_amount": 10,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+            (
+                {"name": "chimi"},
+                {
+                    "name": "chimi",
+                    "description": "Huge fan of chimichangas. Wanna buy a lot",
+                    "full_amount": 1000000,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+            (
+                {"description": "Give me the money!"},
+                {
+                    "name": "chimichangas4life",
+                    "description": "Give me the money!",
+                    "full_amount": 1000000,
+                    "id": 1,
+                    "invested_amount": 0,
+                    "fully_invested": False,
+                    "close_date": None,
+                    "create_date": "2010-10-10T00:00:00",
+                },
+            ),
+        ],
+    )
+    def test_update_charity_project(superuser_client, charity_project, json, expected_data):
+>       response = superuser_client.patch("/charity_project/1", json=json)
+
+tests/test_charity_project.py:350: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_____ test_update_charity_project_full_amount_equal_invested_amount[json0] _____
+
+superuser_client = <starlette.testclient.TestClient object at 0x1121821d0>
+charity_project_little_invested = <app.models.charity_project.CharityProject object at 0x112183df0>
+json = {'full_amount': 100}
+
+    @pytest.mark.parametrize('json', [
+        {'full_amount': 100},
+        {'full_amount': 1000},
+    ])
+    def test_update_charity_project_full_amount_equal_invested_amount(superuser_client, charity_project_little_invested, json):
+        response = superuser_client.patch(
+            '/charity_project/1',
+            json=json,
+        )
+        assert (
+            response.status_code == 200
+        ), (
+            'При редактировании проекта должно быть разрешено устанавливать требуемую сумму больше или равную внесённой.'
+            'Должен возвращаться статус-код 200.'
+        )
+>       assert response.json()['full_amount'] == json['full_amount'], (
+            'При редактировании проекта должно быть разрешено устанавливать требуемую сумму больше или равную внесённой. '
+            'Требуемая сумма не изменилась.'
+        )
+E       AssertionError: При редактировании проекта должно быть разрешено устанавливать требуемую сумму больше или равную внесённой. Требуемая сумма не изменилась.
+E       assert -100 == 100
+E         +-100
+E         -100
+
+tests/test_charity_project.py:390: AssertionError
+_____ test_update_charity_project_full_amount_equal_invested_amount[json1] _____
+
+superuser_client = <starlette.testclient.TestClient object at 0x11221ce50>
+charity_project_little_invested = <app.models.charity_project.CharityProject object at 0x11221e950>
+json = {'full_amount': 1000}
+
+    @pytest.mark.parametrize('json', [
+        {'full_amount': 100},
+        {'full_amount': 1000},
+    ])
+    def test_update_charity_project_full_amount_equal_invested_amount(superuser_client, charity_project_little_invested, json):
+        response = superuser_client.patch(
+            '/charity_project/1',
+            json=json,
+        )
+        assert (
+            response.status_code == 200
+        ), (
+            'При редактировании проекта должно быть разрешено устанавливать требуемую сумму больше или равную внесённой.'
+            'Должен возвращаться статус-код 200.'
+        )
+>       assert response.json()['full_amount'] == json['full_amount'], (
+            'При редактировании проекта должно быть разрешено устанавливать требуемую сумму больше или равную внесённой. '
+            'Требуемая сумма не изменилась.'
+        )
+E       AssertionError: При редактировании проекта должно быть разрешено устанавливать требуемую сумму больше или равную внесённой. Требуемая сумма не изменилась.
+E       assert -1000 == 1000
+E         +-1000
+E         -1000
+
+tests/test_charity_project.py:390: AssertionError
+__________________ test_update_charity_project_invalid[json0] __________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111d76530>
+charity_project = <app.models.charity_project.CharityProject object at 0x111d747c0>
+json = {'desctiption': ''}
+
+    @pytest.mark.parametrize(
+        "json",
+        [
+            {"desctiption": ""},
+            {"name": ""},
+            {"full_amount": ""},
+            {"invested_amount": 100},
+            {"create_date": '2010-10-10'},
+            {"close_date": '2010-10-10'},
+            {"fully_invested": True},
+        ],
+    )
+    def test_update_charity_project_invalid(superuser_client, charity_project, json):
+>       response = superuser_client.patch('/charity_project/1', json=json)
+
+tests/test_charity_project.py:409: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+__________________ test_update_charity_project_invalid[json3] __________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111e7b9d0>
+charity_project = <app.models.charity_project.CharityProject object at 0x111d7f6a0>
+json = {'invested_amount': 100}
+
+    @pytest.mark.parametrize(
+        "json",
+        [
+            {"desctiption": ""},
+            {"name": ""},
+            {"full_amount": ""},
+            {"invested_amount": 100},
+            {"create_date": '2010-10-10'},
+            {"close_date": '2010-10-10'},
+            {"fully_invested": True},
+        ],
+    )
+    def test_update_charity_project_invalid(superuser_client, charity_project, json):
+>       response = superuser_client.patch('/charity_project/1', json=json)
+
+tests/test_charity_project.py:409: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+__________________ test_update_charity_project_invalid[json4] __________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111d77460>
+charity_project = <app.models.charity_project.CharityProject object at 0x111b98be0>
+json = {'create_date': '2010-10-10'}
+
+    @pytest.mark.parametrize(
+        "json",
+        [
+            {"desctiption": ""},
+            {"name": ""},
+            {"full_amount": ""},
+            {"invested_amount": 100},
+            {"create_date": '2010-10-10'},
+            {"close_date": '2010-10-10'},
+            {"fully_invested": True},
+        ],
+    )
+    def test_update_charity_project_invalid(superuser_client, charity_project, json):
+>       response = superuser_client.patch('/charity_project/1', json=json)
+
+tests/test_charity_project.py:409: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+__________________ test_update_charity_project_invalid[json5] __________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111cbfcd0>
+charity_project = <app.models.charity_project.CharityProject object at 0x11225f790>
+json = {'close_date': '2010-10-10'}
+
+    @pytest.mark.parametrize(
+        "json",
+        [
+            {"desctiption": ""},
+            {"name": ""},
+            {"full_amount": ""},
+            {"invested_amount": 100},
+            {"create_date": '2010-10-10'},
+            {"close_date": '2010-10-10'},
+            {"fully_invested": True},
+        ],
+    )
+    def test_update_charity_project_invalid(superuser_client, charity_project, json):
+>       response = superuser_client.patch('/charity_project/1', json=json)
+
+tests/test_charity_project.py:409: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+__________________ test_update_charity_project_invalid[json6] __________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111a11150>
+charity_project = <app.models.charity_project.CharityProject object at 0x111e92050>
+json = {'fully_invested': True}
+
+    @pytest.mark.parametrize(
+        "json",
+        [
+            {"desctiption": ""},
+            {"name": ""},
+            {"full_amount": ""},
+            {"invested_amount": 100},
+            {"create_date": '2010-10-10'},
+            {"close_date": '2010-10-10'},
+            {"fully_invested": True},
+        ],
+    )
+    def test_update_charity_project_invalid(superuser_client, charity_project, json):
+>       response = superuser_client.patch('/charity_project/1', json=json)
+
+tests/test_charity_project.py:409: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_____ test_update_charity_project_full_amount_smaller_already_invested[0] ______
+
+superuser_client = <starlette.testclient.TestClient object at 0x1120ab430>
+charity_project_little_invested = <app.models.charity_project.CharityProject object at 0x11202f9d0>
+full_amount = 0
+
+    @pytest.mark.parametrize('full_amount', [
+        0,
+        5,
+    ])
+    def test_update_charity_project_full_amount_smaller_already_invested(superuser_client, charity_project_little_invested, full_amount):
+>       response = superuser_client.patch(
+            '/charity_project/1',
+            json={
+                'name': 'nunchaku',
+                'description': 'Huge fan of chimichangas. Wanna buy a lot',
+                'invested_amount': full_amount,
+            },
+        )
+
+tests/test_charity_project.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_____ test_update_charity_project_full_amount_smaller_already_invested[5] ______
+
+superuser_client = <starlette.testclient.TestClient object at 0x11226dab0>
+charity_project_little_invested = <app.models.charity_project.CharityProject object at 0x11226d810>
+full_amount = 5
+
+    @pytest.mark.parametrize('full_amount', [
+        0,
+        5,
+    ])
+    def test_update_charity_project_full_amount_smaller_already_invested(superuser_client, charity_project_little_invested, full_amount):
+>       response = superuser_client.patch(
+            '/charity_project/1',
+            json={
+                'name': 'nunchaku',
+                'description': 'Huge fan of chimichangas. Wanna buy a lot',
+                'invested_amount': full_amount,
+            },
+        )
+
+tests/test_charity_project.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:601: in patch
+    return self.request('PATCH', url, data=data, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+__________________ test_delete_charity_project_already_closed __________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x11225f190>
+closed_charity_project = <app.models.charity_project.CharityProject object at 0x111d9fdc0>
+
+    def test_delete_charity_project_already_closed(superuser_client, closed_charity_project):
+        response = superuser_client.delete('/charity_project/1')
+        assert response.status_code == 400, (
+            'Удаление закрытых проектов должно быть запрещено. '
+            'Статус-код ответа отличается от ожидаемого.'
+        )
+>       assert response.json()['detail'] == 'В проект были внесены средства, не подлежит удалению!', (
+            'Удаление закрытых проектов должно быть запрещено. '
+            'Тело ответа отличается от ожидаемого.'
+        )
+E       AssertionError: Удаление закрытых проектов должно быть запрещено. Тело ответа отличается от ожидаемого.
+E       assert 'Закрытый проект нельзя редактировать!' == 'В проект были внесены средства, не подлежит удалению!'
+E         - В проект были внесены средства, не подлежит удалению!
+E         + Закрытый проект нельзя редактировать!
+
+tests/test_charity_project.py:592: AssertionError
+__________________ test_get_all_charity_project_not_auth_user __________________
+
+test_client = <starlette.testclient.TestClient object at 0x111b98e50>
+charity_project = <app.models.charity_project.CharityProject object at 0x111f04580>
+charity_project_nunchaku = <app.models.charity_project.CharityProject object at 0x111f060e0>
+
+    def test_get_all_charity_project_not_auth_user(test_client, charity_project, charity_project_nunchaku):
+>       response = test_client.get("/charity_project/")
+
+tests/test_charity_project.py:599: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:542: in get
+    return self.request('GET', url, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 2 validation errors for CharityProjectDB
+E               response -> 0 -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+E               response -> 1 -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_______________________ test_project_exist_non_donations _______________________
+
+superuser_client = <starlette.testclient.TestClient object at 0x111d8d360>
+charity_project = <app.models.charity_project.CharityProject object at 0x11236a950>
+
+    def test_project_exist_non_donations(superuser_client, charity_project):
+>       response = superuser_client.get('/charity_project/')
+
+tests/test_investment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.10/site-packages/requests/sessions.py:542: in get
+    return self.request('GET', url, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:476: in request
+    return super().request(
+venv/lib/python3.10/site-packages/requests/sessions.py:529: in request
+    resp = self.send(prep, **send_kwargs)
+venv/lib/python3.10/site-packages/requests/sessions.py:645: in send
+    r = adapter.send(request, **kwargs)
+venv/lib/python3.10/site-packages/starlette/testclient.py:270: in send
+    raise exc
+venv/lib/python3.10/site-packages/starlette/testclient.py:267: in send
+    portal.call(self.app, scope, receive, send)
+venv/lib/python3.10/site-packages/anyio/from_thread.py:283: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:458: in result
+    return self.__get_result()
+/usr/local/Cellar/python@3.10/3.10.6_2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py:403: in __get_result
+    raise self._exception
+venv/lib/python3.10/site-packages/anyio/from_thread.py:219: in _call_func
+    retval = await retval
+venv/lib/python3.10/site-packages/fastapi/applications.py:269: in __call__
+    await super().__call__(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/applications.py:124: in __call__
+    await self.middleware_stack(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:184: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/middleware/errors.py:162: in __call__
+    await self.app(scope, receive, _send)
+venv/lib/python3.10/site-packages/starlette/exceptions.py:93: in __call__
+    raise exc
+venv/lib/python3.10/site-packages/starlette/exceptions.py:82: in __call__
+    await self.app(scope, receive, sender)
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:21: in __call__
+    raise e
+venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:670: in __call__
+    await route.handle(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:266: in handle
+    await self.app(scope, receive, send)
+venv/lib/python3.10/site-packages/starlette/routing.py:65: in app
+    response = await func(request)
+venv/lib/python3.10/site-packages/fastapi/routing.py:235: in app
+    response_data = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        exclude: Optional[Union[SetIntStr, DictIntStrAny]] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            response_content = _prepare_response_content(
+                response_content,
+                exclude_unset=exclude_unset,
+                exclude_defaults=exclude_defaults,
+                exclude_none=exclude_none,
+            )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(  # type: ignore[misc]
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, ErrorWrapper):
+                errors.append(errors_)
+            elif isinstance(errors_, list):
+                errors.extend(errors_)
+            if errors:
+>               raise ValidationError(errors, field.type_)
+E               pydantic.error_wrappers.ValidationError: 1 validation error for CharityProjectDB
+E               response -> 0 -> full_amount
+E                 ensure this value is less than 0 (type=value_error.number.not_lt; limit_value=0)
+
+venv/lib/python3.10/site-packages/fastapi/routing.py:138: ValidationError
+_________________ test_fully_invested_amount_for_two_projects __________________
+
+user_client = <starlette.testclient.TestClient object at 0x112181510>
+charity_project = <app.models.charity_project.CharityProject object at 0x111d7e440>
+charity_project_nunchaku = <app.models.charity_project.CharityProject object at 0x111d7d990>
+
+    def test_fully_invested_amount_for_two_projects(user_client, charity_project, charity_project_nunchaku):
+        """Создано 2 пустых проекта. Тест создает 2 пожертвования которые полностью покрывают инвестиции первого проекта. Второй проект должен оставаться не инвестированным."""
+        user_client.post('/donation/', json={
+            'full_amount': 500000,
+        })
+        user_client.post('/donation/', json={
+            'full_amount': 500000,
+        })
+>       assert charity_project.fully_invested, test_fully_invested_amount_for_two_projects.__doc__
+E       AssertionError: Создано 2 пустых проекта. Тест создает 2 пожертвования которые полностью покрывают инвестиции первого проекта. Второй проект должен оставаться не инвестированным.
+E       assert False
+E        +  where False = <app.models.charity_project.CharityProject object at 0x111d7e440>.fully_invested
+
+tests/test_investment.py:34: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_charity_project.py::test_get_charity_project - pydantic.err...
+FAILED tests/test_charity_project.py::test_get_all_charity_project - pydantic...
+FAILED tests/test_charity_project.py::test_create_charity_project - Assertion...
+FAILED tests/test_charity_project.py::test_delete_charity_project - pydantic....
+FAILED tests/test_charity_project.py::test_update_charity_project[json0-expected_data0]
+FAILED tests/test_charity_project.py::test_update_charity_project[json1-expected_data1]
+FAILED tests/test_charity_project.py::test_update_charity_project[json2-expected_data2]
+FAILED tests/test_charity_project.py::test_update_charity_project_full_amount_equal_invested_amount[json0]
+FAILED tests/test_charity_project.py::test_update_charity_project_full_amount_equal_invested_amount[json1]
+FAILED tests/test_charity_project.py::test_update_charity_project_invalid[json0]
+FAILED tests/test_charity_project.py::test_update_charity_project_invalid[json3]
+FAILED tests/test_charity_project.py::test_update_charity_project_invalid[json4]
+FAILED tests/test_charity_project.py::test_update_charity_project_invalid[json5]
+FAILED tests/test_charity_project.py::test_update_charity_project_invalid[json6]
+FAILED tests/test_charity_project.py::test_update_charity_project_full_amount_smaller_already_invested[0]
+FAILED tests/test_charity_project.py::test_update_charity_project_full_amount_smaller_already_invested[5]
+FAILED tests/test_charity_project.py::test_delete_charity_project_already_closed
+FAILED tests/test_charity_project.py::test_get_all_charity_project_not_auth_user
+FAILED tests/test_investment.py::test_project_exist_non_donations - pydantic....
+FAILED tests/test_investment.py::test_fully_invested_amount_for_two_projects
+================= 20 failed, 58 passed, 224 warnings in 6.93s ==================
