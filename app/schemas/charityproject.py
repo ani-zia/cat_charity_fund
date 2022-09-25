@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, Field, NegativeInt, PositiveInt
+from pydantic import BaseModel, Extra, Field, PositiveInt
 
 
 class CharityProjectBase(BaseModel):
@@ -17,12 +17,13 @@ class CharityProjectCreate(CharityProjectBase):
 
 
 class CharityProjectUpdate(CharityProjectBase):
-    pass
+
+    class Config:
+        extra = Extra.forbid
 
 
 class CharityProjectDB(CharityProjectBase):
     id: int
-    full_amount: Optional[NegativeInt]
     invested_amount: Optional[int]
     create_date: Optional[datetime]
     close_date: Optional[datetime]

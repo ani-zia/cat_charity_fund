@@ -31,7 +31,7 @@ async def check_charity_project_exists(
     if not charity_project:
         raise HTTPException(
             status_code=HTTPStatus.NOT_FOUND,
-            detail='Нет проекта'
+            detail='Проект не найден'
         )
     return charity_project
 
@@ -46,3 +46,26 @@ async def check_charity_project_active(
             detail='Закрытый проект нельзя редактировать!'
         )
     return charity_project
+
+
+async def check_charity_project_has_investment(
+    charity_project: CharityProject,
+    session: AsyncSession,
+) -> CharityProject:
+    if charity_project.invested_amount:
+        raise HTTPException(
+            status_code=HTTPStatus.BAD_REQUEST,
+            detail='В проект были внесены средства, не подлежит удалению!'
+        )
+
+
+async def check_charity_project_updated_amount(
+    obj_in_full_amount: int,
+    charity_project_inv_amount: int,
+    session: AsyncSession
+):
+    if obj_in_full_amount < charity_project_inv_amount:
+        raise HTTPException(
+            status_code=HTTPStatus.UNPROCESSABLE_ENTITY,
+            detail='Нельзя установить требуемую сумму меньше уже вложенной'
+        )

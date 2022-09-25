@@ -42,7 +42,6 @@ class CRUDCharityProject(CRUDBase):
             session: AsyncSession,
     ) -> CharityProject:
         obj_in_data = obj_in.dict()
-        obj_in_data['full_amount'] = -abs(obj_in_data['full_amount'])
         db_obj = self.model(**obj_in_data)
         session.add(db_obj)
         await session.commit()
@@ -57,8 +56,6 @@ class CRUDCharityProject(CRUDBase):
     ) -> CharityProject:
         db_obj_data = jsonable_encoder(db_obj)
         update_data = obj_in.dict(exclude_unset=True)
-        if 'full_amount' in update_data:
-            update_data['full_amount'] = -abs(update_data['full_amount'])
         for field in db_obj_data:
             if field in update_data:
                 setattr(db_obj, field, update_data[field])

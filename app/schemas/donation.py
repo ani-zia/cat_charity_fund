@@ -22,6 +22,3 @@ class DonationDBFull(DonationDB):
     invested_amount: Optional[int]
     close_date: Optional[datetime]
     fully_invested: Optional[bool]
-
-    class Config:
-        orm_mode = True

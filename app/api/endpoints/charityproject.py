@@ -1,12 +1,13 @@
-from http import HTTPStatus
 from typing import List
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.validators import (check_charity_project_active,
                                 check_charity_project_exists,
+                                check_charity_project_has_investment,
+                                check_charity_project_updated_amount,
                                 check_name_duplicate)
 from app.core.db import get_async_session
 from app.core.user import current_superuser
@@ -15,7 +16,7 @@ from app.models import Donation
 from app.schemas.charityproject import (CharityProjectCreate,
                                         CharityProjectDB,
                                         CharityProjectUpdate)
-from app.services.investment import donation_process
+from app.services.investment import accepter_process
 
 
 router = APIRouter()
@@ -37,8 +38,9 @@ async def create_new_charity_project(
     Создаёт благотворительный проект.
     """
     await check_name_duplicate(charity_project.name, session)
-    new_project = await charityproject_crud.create_project(charity_project, session)
-    new_project = await donation_process(new_project, Donation, session)
+    new_project = await charityproject_crud.create_project(charity_project,
+                                                           session)
+    new_project = await accepter_process(new_project, Donation, session)
     return new_project
 
 
@@ -66,19 +68,21 @@ async def partially_update_charity_project(
             charity_project, obj_in, session
         )
         return charity_project
-    if obj_in.full_amount < charity_project.invested_amount:
-        raise HTTPException(
-            status_code=HTTPStatus.UNPROCESSABLE_ENTITY,
-            detail='Мало денег'
-        )
+    await check_charity_project_updated_amount(obj_in.full_amount,
+                                               charity_project.invested_amount,
+                                               session)
     charity_project = await charityproject_crud.update_project(charity_project,
                                                                obj_in,
                                                                session)
-    charity_project = await donation_process(charity_project, Donation, session)
+    charity_project = await accepter_process(charity_project, Donation, session)
     return charity_project
 
 
-@router.get('/', response_model=List[CharityProjectDB])
+@router.get(
+    '/',
+    response_model_exclude_none=True,
+    response_model=List[CharityProjectDB]
+)
 async def get_all_charity_projects(
     session: AsyncSession = Depends(get_async_session)
 ):
@@ -102,13 +106,7 @@ async def remove_charity_project(
     в который уже были инвестированы средства,
     его можно только закрыть."""
     charity_project = await check_charity_project_exists(project_id, session)
-    charity_project = await check_charity_project_active(charity_project,
-                                                         session)
-    if charity_project.invested_amount:
-        raise HTTPException(
-            status_code=HTTPStatus.BAD_REQUEST,
-            detail='В проект были внесены средства, не подлежит удалению!'
-        )
+    await check_charity_project_has_investment(charity_project, session)
     charity_project = await charityproject_crud.remove_project(charity_project,
                                                                session)
     return charity_project
