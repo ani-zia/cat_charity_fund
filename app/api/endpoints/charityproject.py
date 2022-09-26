@@ -16,7 +16,7 @@ from app.models import Donation
 from app.schemas.charityproject import (CharityProjectCreate,
                                         CharityProjectDB,
                                         CharityProjectUpdate)
-from app.services.investment import accepter_process
+from app.services.investment import donation_process
 
 
 router = APIRouter()
@@ -40,7 +40,7 @@ async def create_new_charity_project(
     await check_name_duplicate(charity_project.name, session)
     new_project = await charityproject_crud.create_project(charity_project,
                                                            session)
-    new_project = await accepter_process(new_project, Donation, session)
+    new_project = await donation_process(new_project, Donation, session)
     return new_project
 
 
@@ -74,7 +74,7 @@ async def partially_update_charity_project(
     charity_project = await charityproject_crud.update_project(charity_project,
                                                                obj_in,
                                                                session)
-    charity_project = await accepter_process(charity_project, Donation, session)
+    charity_project = await donation_process(charity_project, Donation, session)
     return charity_project
 
 
