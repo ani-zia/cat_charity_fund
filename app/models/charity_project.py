@@ -12,4 +12,9 @@ class CharityProject(BaseModel):
     description = Column(Text, nullable=False)
 
     def __repr__(self):
-        return f'Проект {self.name}, необходимо собрать {self.full_amount}'
+        return (f'CharityProject(name={self.name}, '
+                f'full_amount={self.full_amount})')
+
+    def __str__(self):
+        return (f'Проект {self.name}, '
+                f'необходимо собрать {self.full_amount}')
